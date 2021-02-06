@@ -4,6 +4,7 @@ venv/
 .venv
 .venv/
 
+
 __pycache__/
 *.py[cod]
 
@@ -12,11 +13,15 @@ __pycache__/
 .AppleDouble
 .LSOverride
 .vscode
+.env
+.env.db
+.env.web
 
 *.sublime-project
 *.sublime-workspace
 
 static/
 posts/static/
+
 
 db.sqlite3
