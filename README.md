@@ -1,3 +1,5 @@
+![example workflow file path](https://github.com/girik108/yamdb_final/blob/master/.github/workflows/yamdb.yaml/badge.svg)
+
 # API_YamDB
 
 REST API для сервиса YaMDb — базы отзывов о фильмах, книгах и музыке.
