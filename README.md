@@ -1,4 +1,4 @@
-![Yamdb-app_workflow](https://github.com/girik108/yamdb_final/.github/workflows/yamdb.yaml/badge.sv)
+![Yamdb-app_workflow](https://github.com/girik108/yamdb_final/workflows/Greet%20Everyone/badge.svg?branch=master)
 
 # API_YamDB
 
