@@ -1,4 +1,4 @@
-![example workflow file path](https://github.com/girik108/yamdb_final/blob/master/.github/workflows/yamdb.yaml/badge.svg)
+![Yamdb-app_workflow](https://github.com/girik108/yamdb_final/blob/master/.github/workflows/yamdb.yaml/badge.svg)
 
 # API_YamDB
 
