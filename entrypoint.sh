@@ -34,7 +34,7 @@ then
     echo "Super user created"
 fi
 #Load DUMP file
-DUMP_FILE="fixtures.json"
+#DUMP_FILE="fixtures.json"
 
 if test -f "$DUMP_FILE"; then
     echo "Load data"
