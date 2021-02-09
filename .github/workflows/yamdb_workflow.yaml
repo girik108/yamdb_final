@@ -82,5 +82,7 @@ jobs:
             cd yamdb_app/
             docker-compose down
             echo -e "SECRET_KEY=${{ secrets.YAMDB_DJANGO_SECRET_KEY }}\n" > .env.web
+            echo -e "DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }}\n" >> .env.web
+            echo -e "DJANGO_SUPERUSER_EMAIL=${{ secrets.DJANGO_SUPERUSER_EMAIL }}\n" >> .env.web
             echo -e "${{ secrets.ENV_DB }}" > .env.db
             docker-compose up -d --build
