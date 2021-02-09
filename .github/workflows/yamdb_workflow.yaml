@@ -60,4 +60,4 @@ jobs:
           passphrase: ${{ secrets.REMOTE_USERPASS }} # если ваш ssh-ключ защищен паролем
           script: |
             cd yamdb_app/
-            sudo docker-compose up --buld
+            docker-compose up -d --build
