@@ -72,7 +72,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST_IP }}
           username: ${{ secrets.REMOTE_USERNAME }}
           key: ${{ secrets.REMOTE_SSH_KEY }}
-          passphrase: ${{ secrets.REMOTE_USERPASS }} # если ваш ssh-ключ защищен паролем
+          passphrase: ${{ secrets.REMOTE_USERPASS }} # 
           script: |
             cd yamdb_app/
             docker-compose down
