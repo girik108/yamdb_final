@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   web:
-    build: .
+    image: girik108/yamdb
     env_file:
      - ./.env.web
      - ./.env.db
