@@ -61,4 +61,4 @@ jobs:
           key: ${{ secrets.REMOTE_SSH_KEY }}
           passphrase: ${{ secrets.REMOTE_USERPASS }} # если ваш ssh-ключ защищен паролем
           script: |
-            whoami
+            ls -al
