@@ -61,8 +61,8 @@ jobs:
           key: ${{ secrets.REMOTE_SSH_KEY }}
           passphrase: ${{ secrets.REMOTE_USERPASS }} # если ваш ssh-ключ защищен паролем
           rm: true
-          source: "nginx/*, postgres/*, docker-compose.yaml"
-          target: "${{ secrets.REMOTE_APP_DIR }}"
+          source: "docker-compose.yaml,nginx/,postgres/"
+          target: "/home/irek/yamdb_app"
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
