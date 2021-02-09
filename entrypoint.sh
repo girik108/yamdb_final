@@ -14,9 +14,10 @@ then
 fi
 
 #Collect static and make migrations
+python3 manage.py flush --noinput
 python3 manage.py collectstatic --noinput
-python manage.py makemigrations
-python manage.py migrate
+python3 manage.py makemigrations
+python3 manage.py migrate
 
 #Create super user if env set
 if [ "$DJANGO_SUPERUSER_EMAIL" && "$DJANGO_SUPERUSER_PASSWORD" ]
