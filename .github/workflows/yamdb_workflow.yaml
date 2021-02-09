@@ -55,6 +55,8 @@ jobs:
     steps:
       - name: Run a multi-line script
         run: |
+          pwd
+          ls -al
           mkdir ../build
           cp -R {docker-compose.yaml,nginx,postgres} ../build
           tar -cvf deploy.tar ../build/
