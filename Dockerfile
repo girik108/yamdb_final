@@ -9,7 +9,6 @@ ENV PYTHONUNBUFFERED 1
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 
-
 FROM builder AS python_yamdb
 
 RUN adduser --disabled-password worker
