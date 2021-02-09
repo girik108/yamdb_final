@@ -60,6 +60,7 @@ jobs:
           passphrase: ${{ secrets.REMOTE_USERPASS }} # если ваш ssh-ключ защищен паролем
           script: |
             cd yamdb_app/
+            docker-compose down
             echo -e "SECRET_KEY=${{ secrets.YAMDB_DJANGO_SECRET_KEY }}\n" > .env.web
             echo -e "${{ secrets.ENV_DB }}" > .env.db
             docker-compose up -d --build
