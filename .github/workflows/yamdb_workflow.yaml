@@ -76,7 +76,7 @@ jobs:
           script: |
             cd yamdb_app/
             docker-compose down
-            mv -fv tmp/* .
+            cp -fr tmp/* .
             echo -e "SECRET_KEY=${{ secrets.YAMDB_DJANGO_SECRET_KEY }}" > .env.web
             echo -e "DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }}" >> .env.web
             echo -e "DJANGO_SUPERUSER_EMAIL=${{ secrets.DJANGO_SUPERUSER_EMAIL }}" >> .env.web
