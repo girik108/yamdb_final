@@ -18,12 +18,18 @@ python3 manage.py collectstatic --noinput
 python manage.py makemigrations
 python manage.py migrate
 
-#Create super user
-if [ "$DJANGO_SUPERUSER_EMAIL" ]
+#Create super user if env set
+if [ "$DJANGO_SUPERUSER_EMAIL" && "$DJANGO_SUPERUSER_PASSWORD" ]
 then
-    python manage.py createsuperuser \
-        --noinput \
-        --email $DJANGO_SUPERUSER_EMAIL
+    python3 manage.py shell -c "from django.contrib.auth import get_user_model; \
+                                User = get_user_model(); \
+                                User.objects.get_or_create(email='$DJANGO_SUPERUSER_EMAIL', \
+                                                           password='$DJANGO_SUPERUSER_PASSWORD', \
+                                                           is_staff=True, \
+                                                           is_superuser=True)"
+    #python manage.py createsuperuser \
+    #    --noinput \
+    #    --email $DJANGO_SUPERUSER_EMAIL
 fi
 #Load DUMP file
 DUMP_FILE="fixtures.json"
