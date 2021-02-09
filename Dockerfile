@@ -19,7 +19,7 @@ RUN mkdir static
 
 # copy project
 COPY --chown=worker:worker . .
-
+RUN ls -al
 # run app
 #CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000 
 ENTRYPOINT ["/home/worker/entrypoint.sh"]
