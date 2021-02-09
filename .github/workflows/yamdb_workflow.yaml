@@ -65,7 +65,7 @@ jobs:
           passphrase: ${{ secrets.REMOTE_USERPASS }} # если ваш ssh-ключ защищен паролем
           rm: true
           source: "docker-compose.yaml,nginx,postgres"
-          target: "/home/irek/yamdb_app"
+          target: "/home/irek/yamdb_app/tmp"
       - name: executing remote ssh commands to deploy
         uses: appleboy/ssh-action@master
         with:
@@ -76,8 +76,9 @@ jobs:
           script: |
             cd yamdb_app/
             docker-compose down
-            echo -e "SECRET_KEY=${{ secrets.YAMDB_DJANGO_SECRET_KEY }}\n" > .env.web
-            echo -e "DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }}\n" >> .env.web
-            echo -e "DJANGO_SUPERUSER_EMAIL=${{ secrets.DJANGO_SUPERUSER_EMAIL }}\n" >> .env.web
+            mv -fv tmp/* .
+            echo -e "SECRET_KEY=${{ secrets.YAMDB_DJANGO_SECRET_KEY }}" > .env.web
+            echo -e "DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }}" >> .env.web
+            echo -e "DJANGO_SUPERUSER_EMAIL=${{ secrets.DJANGO_SUPERUSER_EMAIL }}" >> .env.web
             echo -e "${{ secrets.ENV_DB }}" > .env.db
             docker-compose up --build
