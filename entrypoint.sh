@@ -28,10 +28,10 @@ then
     #                                                       password='$DJANGO_SUPERUSER_PASSWORD', \
     #                                                       is_staff=True, \
     #                                                       is_superuser=True)"
-    #python manage.py createsuperuser \
-    #    --noinput \
-    #    --email $DJANGO_SUPERUSER_EMAIL
-    echo "Super user created"
+    python manage.py createsuperuser \
+        --noinput \
+        --email $DJANGO_SUPERUSER_EMAIL
+    echo "Super user $DJANGO_SUPERUSER_EMAIL created"
 fi
 #Load DUMP file
 #DUMP_FILE="fixtures.json"
