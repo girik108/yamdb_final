@@ -16,7 +16,7 @@ fi
 #Collect static and make migrations
 python3 manage.py flush --noinput
 python3 manage.py collectstatic --noinput
-python3 manage.py makemigrations
+#python3 manage.py makemigrations
 python3 manage.py migrate
 
 #Create super user if env set
