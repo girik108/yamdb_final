@@ -31,6 +31,10 @@ then
     #                                                       is_superuser=True)"
 
     echo "Super user $DJANGO_SUPERUSER_EMAIL created"
+else
+    echo "Super user not created"
+    echo "$DJANGO_SUPERUSER_EMAIL" 
+    echo "$DJANGO_SUPERUSER_PASSWORD"
 fi
 #Load DUMP file
 #DUMP_FILE="fixtures.json"
