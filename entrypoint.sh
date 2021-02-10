@@ -21,12 +21,12 @@ python3 manage.py migrate
 
 #Create super user if env set
 echo "Check SUPERUSER"
-if test -n "$DJANGO_SUPERUSER_EMAIL";
+if [ "$DJANGO_SUPERUSER_EMAIL" ]
 then
-    python3 manage.py createsuperuser --noinput --email $DJANGO_SUPERUSER_EMAIL
-    echo "Super user created"
-else
-    echo "Super user not created"
+    python manage.py createsuperuser \
+        --noinput \
+        --username $DJANGO_SUPERUSER_EMAIL \
+        --email $DJANGO_SUPERUSER_EMAIL
 fi
 
 #Load DUMP file
