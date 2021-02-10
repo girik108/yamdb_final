@@ -14,12 +14,12 @@ FROM builder AS python_yamdb
 RUN adduser --disabled-password worker
 USER worker
 WORKDIR /home/worker
+
 #Create STATIC dir. Without it Permission denied
 RUN mkdir static
 
 # copy project
 COPY --chown=worker:worker . .
-RUN ls -al
-# run app
-#CMD gunicorn api_yamdb.wsgi:application --bind 0.0.0.0:8000 
+
+# run entrypoint
 ENTRYPOINT ["/home/worker/entrypoint.sh"]
