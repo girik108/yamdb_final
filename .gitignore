@@ -14,8 +14,8 @@ __pycache__/
 .LSOverride
 .vscode
 .env
-.env.db
-.env.web
+.db.env
+.web.env
 
 *.sublime-project
 *.sublime-workspace
