@@ -20,7 +20,7 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 
 #Create super user if env set
-if [[ -n "$DJANGO_SUPERUSER_EMAIL" ]]  && [[ -n "$DJANGO_SUPERUSER_PASSWORD" ]];
+if [[ -n "$DJANGO_SUPERUSER_EMAIL" ]] && [[ -n "$DJANGO_SUPERUSER_PASSWORD" ]];
 then
     python3 manage.py createsuperuser --noinput --email $DJANGO_SUPERUSER_EMAIL
     echo "Super user created"
@@ -29,7 +29,7 @@ else
 fi
 
 #Load DUMP file
-#DUMP_FILE="fixtures.json"
+DUMP_FILE="fixtures.json"
 
 if test -f "$DUMP_FILE"; then
     echo "Load data"
