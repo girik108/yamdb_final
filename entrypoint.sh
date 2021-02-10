@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 
 set -e
 #Wait Postgresql
@@ -20,7 +20,7 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 
 #Create super user if env set
-if [ -n "$DJANGO_SUPERUSER_EMAIL" ] # && [ -n "$DJANGO_SUPERUSER_PASSWORD" ];
+if [[ -n "$DJANGO_SUPERUSER_EMAIL" ]]  && [[ -n "$DJANGO_SUPERUSER_PASSWORD" ]];
 then
     python3 manage.py createsuperuser --noinput --email $DJANGO_SUPERUSER_EMAIL
     echo "Super user created"
