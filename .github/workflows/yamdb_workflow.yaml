@@ -77,11 +77,11 @@ jobs:
             cd yamdb_app/
             docker-compose down
             cp -fr tmp/* .
-            echo -e "SECRET_KEY=${{ secrets.YAMDB_DJANGO_SECRET_KEY }}" > .env.web
-            echo -e "DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }}" >> .env.web
-            echo -e "DJANGO_SUPERUSER_EMAIL=${{ secrets.DJANGO_SUPERUSER_EMAIL }}" >> .env.web
-            echo -e "${{ secrets.ENV_DB }}" > .env.db
-            docker-compose up --build
+            echo -e "SECRET_KEY=${{ secrets.YAMDB_DJANGO_SECRET_KEY }}" > .web.env
+            echo -e "DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }}" >> .web.env
+            echo -e "DJANGO_SUPERUSER_EMAIL=${{ secrets.DJANGO_SUPERUSER_EMAIL }}" >> .web.env
+            echo -e "${{ secrets.ENV_DB }}" > .db.env
+            docker-compose up --build -d
 
   telegram:
     name: Send message in telegramm
