@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 set -e
 #Wait Postgresql
@@ -20,7 +20,7 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 
 #Create super user if env set
-if [ -n "$DJANGO_SUPERUSER_EMAIL" ] && [ -n "$DJANGO_SUPERUSER_PASSWORD" ]
+if [ -n "$DJANGO_SUPERUSER_EMAIL" ] && [ -n "$DJANGO_SUPERUSER_PASSWORD" ];
 then
     python3 manage.py createsuperuser --noinput --email $DJANGO_SUPERUSER_EMAIL
     #python3 manage.py shell -c "from django.contrib.auth import get_user_model; \
