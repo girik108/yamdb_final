@@ -48,7 +48,8 @@ jobs:
         with:
           file: ./Dockerfile
           push: true
-          tags: girik108/yamdb
+          tags: girik108/yamdb:latest
+          no-cache: true
 
   deploy:
     name: Deploy YaMDB to production
