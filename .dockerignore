@@ -1,4 +1,5 @@
-.env.db
+.db.env
+.web.env
 .env
 docker-compose.yaml
 
