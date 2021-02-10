@@ -4,8 +4,8 @@ services:
   web:
     image: girik108/yamdb
     env_file:
-     - ./.env.web
-     - ./.env.db
+     - .web.env
+     - .db.env
     volumes:
       #- ./fixtures.json:/home/worker/fixtures.json
       - static_volume:/home/worker/static/
@@ -13,8 +13,8 @@ services:
       - db
   db:
     image: postgres:latest
-    env_file:
-     - ./.env.db
+    env_file: 
+      - .db.env
     environment:
       - LANG:'ru_RU.UTF-8'
       - LANGUAGE:'ru_RU.UTF-8'
