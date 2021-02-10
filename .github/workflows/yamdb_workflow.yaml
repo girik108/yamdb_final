@@ -81,7 +81,7 @@ jobs:
             echo -e "DJANGO_SUPERUSER_PASSWORD=${{ secrets.DJANGO_SUPERUSER_PASSWORD }}" >> .web.env
             echo -e "DJANGO_SUPERUSER_EMAIL=${{ secrets.DJANGO_SUPERUSER_EMAIL }}" >> .web.env
             echo -e "${{ secrets.ENV_DB }}" > .db.env
-            docker-compose up --build -d
+            docker-compose up --build
 
   telegram:
     name: Send message in telegramm
