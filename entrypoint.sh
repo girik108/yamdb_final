@@ -20,7 +20,8 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 
 #Create super user if env set
-if [ -n "$DJANGO_SUPERUSER_EMAIL" -a -n "$DJANGO_SUPERUSER_PASSWORD" ]; then
+echo "$DJANGO_SUPERUSER_EMAIL"
+if [ -n "$DJANGO_SUPERUSER_EMAIL" ]; then
     python3 manage.py createsuperuser --noinput --email $DJANGO_SUPERUSER_EMAIL
     echo "Super user created"
 else
