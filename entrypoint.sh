@@ -20,16 +20,9 @@ python3 manage.py makemigrations
 python3 manage.py migrate
 
 #Create super user if env set
-if [ -n "$DJANGO_SUPERUSER_EMAIL" ] && [ -n "$DJANGO_SUPERUSER_PASSWORD" ];
+if [ -n "$DJANGO_SUPERUSER_EMAIL" ] # && [ -n "$DJANGO_SUPERUSER_PASSWORD" ];
 then
     python3 manage.py createsuperuser --noinput --email $DJANGO_SUPERUSER_EMAIL
-    #python3 manage.py shell -c "from django.contrib.auth import get_user_model; \
-    #                            User = get_user_model(); \
-    #                            User.objects.get_or_create(email='$DJANGO_SUPERUSER_EMAIL', \
-    #                                                       password='$DJANGO_SUPERUSER_PASSWORD', \
-    #                                                       is_staff=True, \
-    #                                                       is_superuser=True)"
-
     echo "Super user created"
 else
     echo "Super user not created"
