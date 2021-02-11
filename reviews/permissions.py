@@ -11,5 +11,5 @@ class CustomerAccessPermission(BasePermission):
             request.method in SAFE_METHODS,
             obj.author == request.user,
             request.user.is_authenticated and (
-                    request.user.is_moderator or request.user.is_admin),
+                request.user.is_moderator or request.user.is_admin),
         ])
