@@ -19,6 +19,14 @@ python3 manage.py collectstatic --noinput
 python3 manage.py makemigrations
 python3 manage.py migrate
 
+#Load DUMP file
+DUMP_FILE="fixtures.json"
+
+if test -f "$DUMP_FILE"; then
+    echo "Load data"
+    python3 manage.py loaddata fixtures.json
+fi
+
 #Create super user if env set
 echo "Check SUPERUSER"
 if [ "$DJANGO_SUPERUSER_EMAIL" ]
@@ -28,13 +36,6 @@ then
         --email $DJANGO_SUPERUSER_EMAIL
 fi
 
-#Load DUMP file
-DUMP_FILE="fixtures.json"
-
-if test -f "$DUMP_FILE"; then
-    echo "Load data"
-    python3 manage.py loaddata fixtures.json
-fi
 
 #RUN Gunicorn
 gunicorn --bind 0.0.0.0:8000 api_yamdb.wsgi
