@@ -7,7 +7,7 @@ services:
      - .web.env
      - .db.env
     volumes:
-      #- ./fixtures.json:/home/worker/fixtures.json
+      - ./fixtures.json:/home/worker/fixtures.json
       - static_volume:/home/worker/static/
     depends_on:
       - db
