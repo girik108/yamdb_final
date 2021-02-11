@@ -115,3 +115,5 @@ request = requests.post(url, data=data, headers=headers)
 
 * [github.com/girik108](https://github.com/girik108)
 * [email](mailto:gimatovig@yandex.ru)
+
+Проект запущен по адресу http://84.201.145.94/api/v1 
