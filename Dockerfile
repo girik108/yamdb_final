@@ -15,9 +15,6 @@ RUN adduser --disabled-password worker
 USER worker
 WORKDIR /home/worker
 
-#Create STATIC dir. Without it Permission denied
-RUN mkdir static
-
 # copy project
 COPY --chown=worker:worker . .
 
