@@ -22,7 +22,7 @@ class ReviewSerializer(ModelSerializer):
                 title=title, author=request.user
         ).exists():
             raise ValidationError(
-                'Пользователь может оставить только один отзыв на один объект.')
+                'Пользователь может оставить только один отзыв на объект.')
 
         return data
 
