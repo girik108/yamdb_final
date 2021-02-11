@@ -30,7 +30,7 @@ Cоздан в команде из трёх человек с использов
 ```
 git clone https://github.com/girik108/infra_sp2.git
 ```
-2) В директории проекта создайте файл .env.db, в котором пропишите следующие переменные окружения :
+2) В директории проекта создайте файл .db.env, в котором пропишите следующие переменные окружения :
  - POSTGRES_PASSWORD=DBpassword
  - SQL_ENGINE=django.db.backends.postgresql
  - SQL_DATABASE=yamdb
@@ -38,11 +38,19 @@ git clone https://github.com/girik108/infra_sp2.git
  - SQL_PASSWORD=YAMDBpassword
  - SQL_HOST=db
  - SQL_PORT=5432
+ Также создайте файл .web.env, в котором пропишите следующие переменные окружения :
+ - SECRET_KEY=1q2w3e4r5t6y7u8i9o0p 
+ Чтобы очистить БД перед запуском создайте переменную 
+ - DJANGO_FLUSH_DB=True
+ Чтобы создать администратора добавьте следующие переменые окружения 
+ - DJANGO_SUPERUSER_EMAIL=admin@example.com
+ - DJANGO_SUPERUSER_PASSWORD=SUPERpass
  
 3) С помощью Dockerfile и docker-compose.yaml разверните проект:
 ```
 docker-compose up --build
 ```
+
 4) В новом окне терминала узнайте id контейнера yamdb_web и войдите в контейнер:
 ```
 docker container ls
@@ -59,9 +67,9 @@ python manage.py createsuperuser
 python manage.py loaddata fixtures.json
 ```
 _________________________________
-Ваш проект запустился на http://0.0.0.0:8000/
+Ваш проект запустился на http://0.0.0.0:80/
 
-Полная документация доступна по адресу http://0.0.0.0:8000/redoc/
+Полная документация доступна по адресу http://0.0.0.0:80/redoc/
 
 Вы можете запустить тесты и проверить работу модулей:
 ```
